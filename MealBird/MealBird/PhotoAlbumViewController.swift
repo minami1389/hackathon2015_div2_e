@@ -33,8 +33,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
                                             forIndexPath: indexPath) as! PhotoAlbumCollectionViewCell
 
         if let photo = photos[indexPath.item] as? Photo {
-            let image = UIImage(data: photo.image)
-            cell.imageView.image = image
+            cell.setImage(photo.image)
         }
         return cell
     }
@@ -47,8 +46,8 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let oneSide = self.view.frame.size.width - 10
-        return CGSizeMake(oneSide, oneSide)
+        let tabbarHeight = self.tabBarController?.tabBar.frame.size.height;
+        return CGSizeMake(self.view.frame.size.width - 10, self.view.frame.size.height - tabbarHeight! - 30)
     }
     
 }
