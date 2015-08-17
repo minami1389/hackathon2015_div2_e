@@ -76,14 +76,16 @@ class birdHomeViewController: UIViewController {
     }
     
     func moveBirdImageView() {
-        if isBirdMove == false {
-            isBirdMove = true
-            UIImageView.animateWithDuration(4, delay: 2.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                let x = CGFloat(rand() % 320)
-                self.birdImageView.layer.position = CGPoint(x: x, y: self.birdImageView.layer.position.y)
-            }, completion: {(Bool) -> Void in
-                self.isBirdMove = false
-            })
+        if let count = userDefault.objectForKey("count") as? Int {
+            if isBirdMove == false && count >= 3 {
+                isBirdMove = true
+                UIImageView.animateWithDuration(4, delay: 4.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                    let x = CGFloat(rand() % 320)
+                    self.birdImageView.layer.position = CGPoint(x: x, y: self.birdImageView.layer.position.y)
+                }, completion: {(Bool) -> Void in
+                    self.isBirdMove = false
+                })
+            }
         }
     }
     
@@ -155,6 +157,8 @@ class birdHomeViewController: UIViewController {
     }
 
     func getBirdImage(count: Int) -> UIImage {
+        print("count:")
+        println(count)
         birdImageView.frame = CGRect(x: 0,y: 0,width: 50,height: 50)
         birdImageView.layer.position = birdImageViewPosition
         switch count {
@@ -191,10 +195,10 @@ class birdHomeViewController: UIViewController {
                 return UIImage(named: "hiyoko.png")!
             case 8,9:
             if count == 8 {
-                birdImageView.frame = CGRect(x: 0,y: 0,width: 110,height: 110)
+                birdImageView.frame = CGRect(x: 0,y: 0,width: 120,height: 120)
                 birdImageView.layer.position = CGPoint(x: birdImageViewPosition.x, y: birdImageViewPosition.y-20)
             } else {
-                birdImageView.frame = CGRect(x: 0,y: 0,width: 130,height: 130)
+                birdImageView.frame = CGRect(x: 0,y: 0,width: 140,height: 140)
                 birdImageView.layer.position = CGPoint(x: birdImageViewPosition.x, y: birdImageViewPosition.y-30)
             }
                 
@@ -358,21 +362,23 @@ class birdHomeViewController: UIViewController {
         
         // 画像の位置から画面右までにかかる時間の計算
         //let remainTime = (view.bounds.size.width - target.frame.origin.x) * timePerSecond
-        let remainTime = arc4random_uniform(UInt32(5))
+        let remainTime = arc4random_uniform(UInt32(5)) + 1
         // アニメーション
         UIImageView.transitionWithView(target, duration: NSTimeInterval( remainTime), options: .CurveLinear, animations: { () -> Void in
             
             // 画面右まで移動
-            let xMax = arc4random_uniform(UInt32(100));
-            target.frame = CGRectMake(CGFloat(240-xMax), target.frame.origin.y, 50, 50);
+            let xMax = arc4random_uniform(UInt32(100))
+            let yMax = arc4random_uniform(UInt32(200))
+            target.frame = CGRectMake(CGFloat(240-xMax), CGFloat(240-yMax), 50, 50);
             
             }, completion: { _ in
                 
                 UIImageView.transitionWithView(target, duration: NSTimeInterval( remainTime), options: .CurveLinear, animations: { () -> Void in
                     
                     // 画面右まで移動
-                    let xMin = arc4random_uniform(UInt32(100));
-                    target.frame = CGRectMake(CGFloat(10+xMin), target.frame.origin.y, 50, 50);
+                    let xMin = arc4random_uniform(UInt32(100))
+                    let yMax = arc4random_uniform(UInt32(200))
+                    target.frame = CGRectMake(CGFloat(10+xMin), CGFloat(240-yMax), 50, 50);
                     
                     }, completion: { _ in
                         
