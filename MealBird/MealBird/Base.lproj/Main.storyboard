@@ -266,7 +266,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atg-wa-2cd">
-                                <rect key="frame" x="115" y="269" width="90" height="30"/>
+                                <rect key="frame" x="190" y="266" width="120" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="ごはんの写真">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -282,11 +283,11 @@
                             <constraint firstItem="yHe-I5-lUL" firstAttribute="top" secondItem="WxN-ks-14T" secondAttribute="bottom" constant="20" id="8dA-OC-9xG"/>
                             <constraint firstAttribute="trailing" secondItem="ELD-08-cGT" secondAttribute="trailing" id="ENo-E0-Te9"/>
                             <constraint firstItem="ELD-08-cGT" firstAttribute="leading" secondItem="Oh2-cm-oXw" secondAttribute="leading" id="YLT-wQ-Wxe"/>
+                            <constraint firstAttribute="centerY" secondItem="atg-wa-2cd" secondAttribute="centerY" id="ZXH-eU-A1D"/>
                             <constraint firstItem="ELD-08-cGT" firstAttribute="top" secondItem="Oh2-cm-oXw" secondAttribute="topMargin" id="ljO-Q6-q19"/>
                             <constraint firstItem="yHe-I5-lUL" firstAttribute="centerY" secondItem="E84-7L-3Fg" secondAttribute="centerY" id="mnk-4k-UkM"/>
-                            <constraint firstAttribute="centerY" secondItem="atg-wa-2cd" secondAttribute="centerY" id="nHq-0T-F91"/>
+                            <constraint firstAttribute="trailing" secondItem="atg-wa-2cd" secondAttribute="trailing" constant="10" id="uun-Pv-RZO"/>
                             <constraint firstAttribute="trailing" secondItem="yHe-I5-lUL" secondAttribute="trailing" constant="20" id="ws9-Tu-x7l"/>
-                            <constraint firstAttribute="centerX" secondItem="atg-wa-2cd" secondAttribute="centerX" id="zvr-wn-YJc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home.png" id="4T4-re-27b"/>

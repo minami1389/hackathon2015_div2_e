@@ -36,6 +36,8 @@ class birdHomeViewController: UIViewController {
     
     private var nowTime: Int! = 0
     
+    var isBirdMove = false
+    
     let userDefault = NSUserDefaults.standardUserDefaults()
     
     
@@ -69,6 +71,20 @@ class birdHomeViewController: UIViewController {
         resetIsEat(asaTime)
         resetIsEat(hiruTime)
         resetIsEat(yoruTime)
+        
+        moveBirdImageView()
+    }
+    
+    func moveBirdImageView() {
+        if isBirdMove == false {
+            isBirdMove = true
+            UIImageView.animateWithDuration(4, delay: 2.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                let x = CGFloat(rand() % 320)
+                self.birdImageView.layer.position = CGPoint(x: x, y: self.birdImageView.layer.position.y)
+            }, completion: {(Bool) -> Void in
+                self.isBirdMove = false
+            })
+        }
     }
     
     func resetIsEat(time:String) {
