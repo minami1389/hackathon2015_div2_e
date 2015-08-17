@@ -23,6 +23,10 @@ class birdHomeViewController: UIViewController {
     var cameraMessageLabel : UILabel!
     var birdImageViewPosition : CGPoint!
     
+    
+    @IBOutlet weak var onputView: UIView!
+    @IBOutlet weak var heartView: UIView!
+    
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var photoPreviewImageView: UIImageView!
     var birdImageView : UIImageView!
@@ -61,6 +65,9 @@ class birdHomeViewController: UIViewController {
         } else {
             userDefault.setObject(false, forKey: "isEat")
         }
+        
+        onputView.hidden = true
+        heartView.hidden = true
     }
     
     func timeEvent(timer:NSTimer) {
@@ -643,6 +650,16 @@ class birdHomeViewController: UIViewController {
             self.didAddPhoto()
             self.mealPhoto.removeFromSuperview()
             self.mealPhoto.transform = CGAffineTransformIdentity
+            
+            let rand = random() % 2
+            if rand == 0 {
+                self.onputView.hidden = false
+                NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "hiddenOnpu", userInfo: nil, repeats: false)
+            } else {
+                self.heartView.hidden = false
+                NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "hiddenHeart", userInfo: nil, repeats: false)
+            }
+            
         })
         
         //sound
@@ -651,6 +668,24 @@ class birdHomeViewController: UIViewController {
         AudioServicesCreateSystemSoundID(soundUrl, &soundIdRing)
         AudioServicesPlaySystemSound(soundIdRing)
         
+    }
+    
+    func hiddenOnpu() {
+        UIImageView.animateWithDuration(1, delay:0, options: nil, animations: { () -> Void in
+                self.onputView.alpha = 0
+            }, completion: {(Bool) -> Void in
+                self.onputView.hidden = true
+                self.onputView.alpha = 1
+            })
+    }
+    
+    func hiddenHeart() {
+        UIImageView.animateWithDuration(1, delay:0, options: nil, animations: { () -> Void in
+                self.heartView.alpha = 0
+            }, completion: {(Bool) -> Void in
+                self.heartView.hidden = true
+                self.heartView.alpha = 1
+            })
     }
     
     @IBAction func didpushbutton(sender: AnyObject) {

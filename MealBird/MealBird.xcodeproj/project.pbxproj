@@ -14,6 +14,7 @@
 		84A93CD51B818EA20044B20E /* penguin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A93CD41B818EA20044B20E /* penguin@2x.png */; };
 		84A93CD71B819E730044B20E /* sound4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84A93CD61B819E730044B20E /* sound4.wav */; };
 		955DD195D6923B3FF9454E21 /* libPods-MealBird.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB713CFEB8B9D77548128A9 /* libPods-MealBird.a */; };
+		E91667FE1B81B62800DE7F1E /* hukidasshi.png in Resources */ = {isa = PBXBuildFile; fileRef = E91667FD1B81B62800DE7F1E /* hukidasshi.png */; };
 		E92DF2861B81582D0008C313 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E92DF2831B81582D0008C313 /* camera@2x.png */; };
 		E92DF2871B81582D0008C313 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E92DF2841B81582D0008C313 /* home@2x.png */; };
 		E92DF2881B81582D0008C313 /* images@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E92DF2851B81582D0008C313 /* images@2x.png */; };
@@ -60,6 +61,7 @@
 		8DB713CFEB8B9D77548128A9 /* libPods-MealBird.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MealBird.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93608B7BA918AB06FDA76A41 /* Pods-MealBird.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealBird.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MealBird/Pods-MealBird.debug.xcconfig"; sourceTree = "<group>"; };
 		E7B2A983587A85245565F63B /* Pods-MealBird.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealBird.release.xcconfig"; path = "Pods/Target Support Files/Pods-MealBird/Pods-MealBird.release.xcconfig"; sourceTree = "<group>"; };
+		E91667FD1B81B62800DE7F1E /* hukidasshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hukidasshi.png; sourceTree = "<group>"; };
 		E92DF2831B81582D0008C313 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		E92DF2841B81582D0008C313 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		E92DF2851B81582D0008C313 /* images@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "images@2x.png"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		8406CF241B80B48D00468F87 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				E91667FD1B81B62800DE7F1E /* hukidasshi.png */,
 				E92DF2831B81582D0008C313 /* camera@2x.png */,
 				E92DF2841B81582D0008C313 /* home@2x.png */,
 				E92DF2851B81582D0008C313 /* images@2x.png */,
@@ -348,6 +351,7 @@
 				E9BA57491B80B9E2008A8C11 /* sekisei2_inko@2x.png in Resources */,
 				84A93CD21B818A2E0044B20E /* sound2.wav in Resources */,
 				E9BA57531B80C8FA008A8C11 /* bg_hiru@2x.png in Resources */,
+				E91667FE1B81B62800DE7F1E /* hukidasshi.png in Resources */,
 				E92DF2871B81582D0008C313 /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
